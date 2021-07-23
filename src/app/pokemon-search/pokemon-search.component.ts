@@ -29,7 +29,8 @@ export class PokemonSearchComponent implements OnInit {
 
   onSubmit(name: string) {
     this.pokemonService.searchPokemon(name)
-    .subscribe(p => this.searchedPokmon = p)
+    .subscribe(p => {this.searchedPokmon = p; console.log(this.searchedPokmon)})
+   
   }
 
   //search(term:string):void {
