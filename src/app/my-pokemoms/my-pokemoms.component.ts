@@ -23,6 +23,7 @@ export class MyPokemomsComponent implements OnInit {
     this.selectedPokemon = pokemon
   }
  
+  //NOT: this.heroes = this.heroService.getHeroes();
   getPokemon(): void {
     this.PokemonService.getPokmons()
     .subscribe(pokemons => this.pokemons = pokemons)   //Observable.subscribe(): asynchronous approach

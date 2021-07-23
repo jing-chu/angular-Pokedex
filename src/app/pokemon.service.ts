@@ -25,13 +25,19 @@ export class PokemonService {
       )   
   }
 
-  searchPokemon(id: number):Observable<Pokemon> {
-    const url= `${this.pokemonsUrl}/${id}`
+  
+ searchPokemon(name: string):Observable<Pokemon> {
+    const url= `${this.pokemonsUrl}/${name}`
     return this.http.get<Pokemon>(url)   //returns an observable of object
       .pipe(
-        catchError(this.handleError<Pokemon>(`searchPokemons name=${id}`))
+        catchError(this.handleError<Pokemon>(`searchPokemons name=${name}`))
       )
   }
+  
+/**   
+   * 
+   */
+  
 
   /**
    * Handle Http operation that failed.

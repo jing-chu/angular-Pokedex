@@ -1,9 +1,16 @@
-<form (ngSubmit)="onSubmit()">
-  <input id="search-box" placeholder="id of pokemon" />
-  <button type="submit">Search</button> 
+
+<form (ngSubmit)="onSubmit(name)">
+  <input id="search-box" [(ngModel)]="name" name="name" placeholder="name of pokemon" />
+  <button type="submit" >Search</button> 
 </form>
+
+<h3>{{searchedPokmon}}</h3>
 
 <div>
   <button>Pokemon I've caught</button>
   <button>Pokemon Wishlist</button>
 </div>
+
+
+<!---->
+

@@ -16,20 +16,28 @@ import { PokemonService } from "../pokemon.service"
   styleUrls: ['./pokemon-search.component.css']
 })
 export class PokemonSearchComponent implements OnInit {
-
-  //pokemons$!: Observable<Pokemon>
+  pokemons$!: Observable<Pokemon>
+  searchedPokmon?: Pokemon | undefined
+  name = ""
   //private searchTerms = new Subject<string>()
+
  
 
   constructor(
     private pokemonService: PokemonService,
   ) { }
 
+  onSubmit(name: string) {
+    this.pokemonService.searchPokemon(name)
+    .subscribe(p => this.searchedPokmon = p)
+  }
+
   //search(term:string):void {
   //  this.searchTerms.next(term)
   //}
 
   ngOnInit(): void {
+   
     //this.pokemons$ = this.searchTerms.pipe(
     // wait 300ms after each keystroke before considering the term
     //debounceTime(300),
