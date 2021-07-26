@@ -15,6 +15,8 @@ export class PokemonService {
   private pokemonsUrl = 'https://pokeapi.co/api/v2/pokemon'
   ivCaughtItems: Pokemon[] = []
   wishlistItems: Pokemon[] = []
+  ivCaughtSet = new Set()
+  wishlistSet = new Set()
 
   constructor(
     private http: HttpClient
@@ -37,25 +39,30 @@ export class PokemonService {
 
   addToIvCaught(pokemon: Pokemon) {
     this.ivCaughtItems.push(pokemon)
+    this.ivCaughtSet.add(pokemon.name)
   }
 
   getIvCaughtItems() {
     return this.ivCaughtItems
   }
+
+  getIvCaughtSet() {
+    return this.ivCaughtSet
+  }
  
   addToWishlistItems(pokemon: Pokemon) {
     this.wishlistItems.push(pokemon)
+    this.wishlistSet.add(pokemon.name)
   }
 
   getWishlistItems() {
     return this.wishlistItems
   }
 
+  getWishlistSet() {
+    return this.wishlistSet
+  }
 
-/**   
-   * 
-   */
-  
 
   /**
    * Handle Http operation that failed.

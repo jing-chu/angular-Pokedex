@@ -16,7 +16,8 @@ import { PokemonService } from "../pokemon.service"
 export class PokemonSearchComponent implements OnInit {
   searchedPokmon: Pokemon | undefined
   name = ""
-
+  ivCaughtSet = this.pokemonService.getIvCaughtSet()
+  wishlistSet = this.pokemonService.getWishlistSet()
 
   constructor(
     private pokemonService: PokemonService,
@@ -30,15 +31,23 @@ export class PokemonSearchComponent implements OnInit {
   }
 
   saveIvCaught() {
-    if(this.searchedPokmon) {
+    if(this.searchedPokmon && !this.ivCaughtSet.has(this.searchedPokmon.name) && !this.wishlistSet.has(this.searchedPokmon.name)) {
       this.pokemonService.addToIvCaught(this.searchedPokmon)
+    } else if (this.searchedPokmon && !this.ivCaughtSet.has(this.searchedPokmon.name) && this.wishlistSet.has(this.searchedPokmon.name)) {
+      window.alert(`You have added ${this.searchedPokmon.name} in the your wishlist!`) 
+    } else if  (this.searchedPokmon && this.ivCaughtSet.has(this.searchedPokmon.name)) {
+      window.alert(`${this.searchedPokmon.name} has been in the list!`) 
     }
     this.router.navigate(['/mypokemons', {name:this.name}])
   }
 
   saveWishlist() {
-    if(this.searchedPokmon) {
+    if(this.searchedPokmon && !this.wishlistSet.has(this.searchedPokmon.name) && !this.ivCaughtSet.has(this.searchedPokmon.name)) {
       this.pokemonService.addToWishlistItems(this.searchedPokmon)
+    } else if (this.searchedPokmon && !this.wishlistSet.has(this.searchedPokmon.name) && this.ivCaughtSet.has(this.searchedPokmon.name)) {
+      window.alert(`You have caught ${this.searchedPokmon.name}!`) 
+    } else if (this.searchedPokmon && this.wishlistSet.has(this.searchedPokmon.name)) {
+      window.alert(`${this.searchedPokmon.name} has been in the list!`) 
     }
     this.router.navigate(['/mywishlist', {name:this.name}])
   }
