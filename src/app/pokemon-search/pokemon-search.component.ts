@@ -3,12 +3,9 @@ import { Observable, Subject } from 'rxjs';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router'
 
 
-import {
-  debounceTime, distinctUntilChanged, switchMap
-} from 'rxjs/operators';
-
 import { Pokemon } from "../pokemon";
 import { PokemonService } from "../pokemon.service"
+
 
 
 @Component({
@@ -17,12 +14,9 @@ import { PokemonService } from "../pokemon.service"
   styleUrls: ['./pokemon-search.component.css']
 })
 export class PokemonSearchComponent implements OnInit {
-  pokemons$!: Observable<Pokemon>
   searchedPokmon: Pokemon | undefined
   name = ""
-  //private searchTerms = new Subject<string>()
 
- 
 
   constructor(
     private pokemonService: PokemonService,
@@ -31,7 +25,7 @@ export class PokemonSearchComponent implements OnInit {
 
   onSubmit(name: string) {
     this.pokemonService.searchPokemon(name)
-    .subscribe(p => {this.searchedPokmon = p; console.log(this.searchedPokmon)})
+    .subscribe(p => {this.searchedPokmon = p})
    
   }
 
@@ -50,7 +44,8 @@ export class PokemonSearchComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    
+    //this.pokemonService.getPokmons()
+    //.subscribe(arr => console.log(arr))
   }
 
 

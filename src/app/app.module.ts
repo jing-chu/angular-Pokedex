@@ -5,7 +5,6 @@ import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PokemonSearchComponent } from './pokemon-search/pokemon-search.component';
-import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.component';
 import { MyPokemomsComponent } from './my-pokemoms/my-pokemoms.component';
 import { MyWishlistComponent } from './my-wishlist/my-wishlist.component';
 
@@ -14,7 +13,6 @@ import { MyWishlistComponent } from './my-wishlist/my-wishlist.component';
   declarations: [
     AppComponent,
     PokemonSearchComponent,
-    PokemonDetailComponent,
     MyPokemomsComponent,
     MyWishlistComponent,
 
