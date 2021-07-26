@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute} from '@angular/router'
+import { Location } from '@angular/common'
+
 import { Pokemon } from "../pokemon";
 import { PokemonService } from "../pokemon.service"
 
@@ -8,26 +11,24 @@ import { PokemonService } from "../pokemon.service"
   styleUrls: ['./my-wishlist.component.css']
 })
 export class MyWishlistComponent implements OnInit {
-
-  pokemons: Pokemon[] = []
+  pokemons = this.PokemonService.getWishlistItems()
   selectedPokemon?: Pokemon 
 
   constructor(
+    private route: ActivatedRoute,
+    private location: Location,
     private PokemonService: PokemonService
   ) { }
 
   ngOnInit(): void {
-    this.getPokemon()
-  }
 
-  onSelect(pokemon: Pokemon): void {
-    this.selectedPokemon = pokemon
   }
  
-  getPokemon(): void {
-    this.PokemonService.getPokmons()
-    .subscribe(pokemons => this.pokemons = pokemons)   //Observable.subscribe(): asynchronous approach
+
+  goBack(): void {
+    this.location.back()
   }
 
-
 }
+
+

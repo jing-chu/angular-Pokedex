@@ -14,6 +14,7 @@ export class PokemonService {
 
   private pokemonsUrl = 'https://pokeapi.co/api/v2/pokemon'
   ivCaughtItems: Pokemon[] = []
+  wishlistItems: Pokemon[] = []
 
   constructor(
     private http: HttpClient
@@ -24,10 +25,6 @@ export class PokemonService {
       .pipe(
         catchError(this.handleError<Pokemon[]>('getPokemons',[]))
       )   
-  }
-
-  getIvCaughtItems() {
-    return this.ivCaughtItems
   }
   
  searchPokemon(name: string):Observable<Pokemon> {
@@ -41,6 +38,19 @@ export class PokemonService {
   addToIvCaught(pokemon: Pokemon) {
     this.ivCaughtItems.push(pokemon)
   }
+
+  getIvCaughtItems() {
+    return this.ivCaughtItems
+  }
+ 
+  addToWishlistItems(pokemon: Pokemon) {
+    this.wishlistItems.push(pokemon)
+  }
+
+  getWishlistItems() {
+    return this.wishlistItems
+  }
+
 
 /**   
    * 

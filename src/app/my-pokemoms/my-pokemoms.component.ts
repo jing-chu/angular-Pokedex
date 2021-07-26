@@ -11,7 +11,7 @@ import { PokemonService } from "../pokemon.service"
   styleUrls: ['./my-pokemoms.component.css']
 })
 export class MyPokemomsComponent implements OnInit {
-  pokemons: Pokemon[] = []
+  pokemons = this.PokemonService.getIvCaughtItems()
   selectedPokemon?: Pokemon 
 
   constructor(
@@ -21,11 +21,12 @@ export class MyPokemomsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getPokemon()
+    //this.getPokemon()
   }
 
   //NOT: this.heroes = this.heroService.getHeroes();
-  getPokemon(): void {
+  /**
+   * getPokemon(): void {
     const name = this.route.snapshot.paramMap.get('name')
     console.log("NAME QUERYPARAMS", name)
     console.log("ARRAY", this.pokemons)
@@ -34,6 +35,9 @@ export class MyPokemomsComponent implements OnInit {
     .subscribe(pokemon => this.pokemons.push(pokemon))   //Observable.subscribe(): asynchronous approach
     }
   }
+   * 
+   */
+  
 
   goBack(): void {
     this.location.back()

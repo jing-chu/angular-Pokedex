@@ -18,7 +18,7 @@ import { PokemonService } from "../pokemon.service"
 })
 export class PokemonSearchComponent implements OnInit {
   pokemons$!: Observable<Pokemon>
-  searchedPokmon?: Pokemon | undefined
+  searchedPokmon: Pokemon | undefined
   name = ""
   //private searchTerms = new Subject<string>()
 
@@ -36,11 +36,17 @@ export class PokemonSearchComponent implements OnInit {
   }
 
   saveIvCaught() {
+    if(this.searchedPokmon) {
+      this.pokemonService.addToIvCaught(this.searchedPokmon)
+    }
     this.router.navigate(['/mypokemons', {name:this.name}])
   }
 
   saveWishlist() {
-    console.log("Save to wishlist")
+    if(this.searchedPokmon) {
+      this.pokemonService.addToWishlistItems(this.searchedPokmon)
+    }
+    this.router.navigate(['/mywishlist', {name:this.name}])
   }
 
   ngOnInit(): void {
