@@ -13,6 +13,7 @@ import { POKEMON } from './mock-pokemon'
 export class PokemonService {
 
   private pokemonsUrl = 'https://pokeapi.co/api/v2/pokemon'
+  ivCaughtItems: Pokemon[] = []
 
   constructor(
     private http: HttpClient
@@ -25,6 +26,9 @@ export class PokemonService {
       )   
   }
 
+  getIvCaughtItems() {
+    return this.ivCaughtItems
+  }
   
  searchPokemon(name: string):Observable<Pokemon> {
     const url= `${this.pokemonsUrl}/${name}`
@@ -33,7 +37,11 @@ export class PokemonService {
         catchError(this.handleError<Pokemon>(`searchPokemons name=${name}`))
       )
   }
-  
+
+  addToIvCaught(pokemon: Pokemon) {
+    this.ivCaughtItems.push(pokemon)
+  }
+
 /**   
    * 
    */

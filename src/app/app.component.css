@@ -21,21 +21,22 @@ body, input[type="text"], button {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-button {
-  margin-top: 20px;
-  margin-right:30px;
-  background-color: #eee;
+a {
   padding: 1rem;
+  text-decoration: none;
+  margin-top: 10px;
+  margin-right: 1rem;
+  display: inline-block;
+  background-color: #e8e8e8;
+  color: #3d3d3d;
   border-radius: 4px;
-  font-size: 1rem;
 }
 
-button:hover {
-  background-color: #cfd8dc;
+a:hover {
+  color: white;
+  background-color: #42545C;
 }
 
-button:disabled {
-  background-color: #eee;
-  color: #ccc;
-  cursor: auto;
+a.active {
+  background-color: black;
 }

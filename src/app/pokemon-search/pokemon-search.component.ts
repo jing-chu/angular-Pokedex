@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router'
 
 
 import {
@@ -25,6 +26,7 @@ export class PokemonSearchComponent implements OnInit {
 
   constructor(
     private pokemonService: PokemonService,
+    private router: Router,
   ) { }
 
   onSubmit(name: string) {
@@ -33,23 +35,15 @@ export class PokemonSearchComponent implements OnInit {
    
   }
 
-  //search(term:string):void {
-  //  this.searchTerms.next(term)
-  //}
+  saveIvCaught() {
+    this.router.navigate(['/mypokemons', {name:this.name}])
+  }
+
+  saveWishlist() {
+    console.log("Save to wishlist")
+  }
 
   ngOnInit(): void {
-   
-    //this.pokemons$ = this.searchTerms.pipe(
-    // wait 300ms after each keystroke before considering the term
-    //debounceTime(300),
-
-    // ignore new term if same as previous term
-    //distinctUntilChanged(),
-
-    // switch to new search observable each time the term changes
-    //switchMap((term: string) => this.pokemonService.searchPokemon(term)),  
-    //)
-    
     
   }
 

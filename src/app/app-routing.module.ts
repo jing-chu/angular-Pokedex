@@ -5,6 +5,7 @@ import { MyPokemomsComponent } from './my-pokemoms/my-pokemoms.component'
 import { MyWishlistComponent } from './my-wishlist/my-wishlist.component'
 
 const routes: Routes = [
+  { path: '', redirectTo: '/search', pathMatch: 'full' },   //default route
   { path: 'search', component: PokemonSearchComponent },
   { path: 'mypokemons', component: MyPokemomsComponent},
   { path: 'mywishlist', component: MyWishlistComponent},
