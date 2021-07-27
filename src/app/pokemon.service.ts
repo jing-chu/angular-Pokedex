@@ -35,6 +35,7 @@ export class PokemonService {
     const url= `${this.pokemonsUrl}/${name}`
     return this.http.get<Pokemon>(url)   //returns an observable of object
       .pipe(
+        tap(x => console.log("SEARCHED POKEMON: ",x)),
         catchError(this.handleError<Pokemon>(`searchPokemons name=${name}`))
       )
   }

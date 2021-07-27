@@ -4,20 +4,12 @@
   <button type="submit" >Search</button> 
 </form>
 
-<div *ngIf="searchedPokmon">
-  <h3><span>Name: </span>{{searchedPokmon.name | titlecase}}</h3>
-  <h3><span>Id: </span>{{searchedPokmon.id}}</h3> 
-</div>
-
-<div class="save-btn" *ngIf="searchedPokmon">
-  <a [routerLink]="['/mypokemons', {name:name}]" (click)="saveIvCaught()">Pokemon I've caught</a>
-  <a [routerLink]="['/mywishlist', {name:name}]"   (click)="saveWishlist()">Pokemon Wishlist</a>
-</div>
+<app-pokemon-detail [pokemon]="searchedPokmon"></app-pokemon-detail>
 
 <div>
   <h2>All Pokemons</h2>
     <div class="all-names">
-      <a *ngFor="let name of allPokemonsName">{{name}}</a>
+      <a *ngFor="let name of allPokemonsName" (click)="getDetailInfo(name)">{{name}}</a>
     </div>
 
 

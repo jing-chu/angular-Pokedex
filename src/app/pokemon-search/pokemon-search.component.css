@@ -67,7 +67,7 @@ a {
   align-self: auto;
 }
 
-button, .save-btn a {
+button {
   padding: 1rem;
   text-decoration: none;
   margin-top: 10px;

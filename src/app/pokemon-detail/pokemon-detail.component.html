@@ -1,0 +1,9 @@
+<div *ngIf="pokemon">
+  <h3><span>Name: </span>{{pokemon.name | titlecase}}</h3>
+  <h3><span>Id: </span>{{pokemon.id}}</h3> 
+</div>
+
+<div class="save-btn" *ngIf="pokemon">
+  <a [routerLink]="['/mypokemons', {name:name}]" (click)="saveIvCaught()">Pokemon I've caught</a>
+  <a [routerLink]="['/mywishlist', {name:name}]"   (click)="saveWishlist()">Pokemon Wishlist</a>
+</div>

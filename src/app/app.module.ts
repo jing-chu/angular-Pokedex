@@ -8,6 +8,7 @@ import { PokemonSearchComponent } from './pokemon-search/pokemon-search.componen
 import { MyPokemomsComponent } from './my-pokemoms/my-pokemoms.component';
 import { MyWishlistComponent } from './my-wishlist/my-wishlist.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     MyPokemomsComponent,
     MyWishlistComponent,
     PageNotFoundComponent,
+    PokemonDetailComponent,
 
   ],
   imports: [
