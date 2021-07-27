@@ -3,7 +3,7 @@ import { Observable, Subject } from 'rxjs';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router'
 
 
-import { Pokemon } from "../pokemon";
+import { Pokemon, PokemonPage } from "../pokemon";
 import { PokemonService } from "../pokemon.service"
 
 
@@ -14,6 +14,8 @@ import { PokemonService } from "../pokemon.service"
   styleUrls: ['./pokemon-search.component.css']
 })
 export class PokemonSearchComponent implements OnInit {
+ //allPokemons: Pokemon[] = []
+  allPokemonsName: Object[] = []
   searchedPokmon: Pokemon | undefined
   name = ""
   ivCaughtSet = this.pokemonService.getIvCaughtSet()
@@ -53,11 +55,8 @@ export class PokemonSearchComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    //this.pokemonService.getPokmons()
-    //.subscribe(arr => console.log(arr))
+    this.pokemonService.getPokmons()
+    .subscribe(data => {console.log("DATA: ",data)})
   }
-
-
- 
  
 }

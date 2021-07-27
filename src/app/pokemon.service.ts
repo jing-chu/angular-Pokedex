@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs'
-import { HttpClient, HttpHeaders } from '@angular/common/http'
+import { HttpClient } from '@angular/common/http'
 import { catchError, map, tap } from 'rxjs/operators'
 
 
-import { Pokemon } from './pokemon'
-import { POKEMON } from './mock-pokemon'
+import { Pokemon, PokemonPage } from './pokemon'
+
 
 @Injectable({
   providedIn: 'root'
@@ -22,10 +22,11 @@ export class PokemonService {
     private http: HttpClient
   ) { }
 
-  getPokmons(): Observable<Pokemon[]> {
-    return this.http.get<Pokemon[]>(this.pokemonsUrl) //returns an observable of pokemon arrays
+  getPokmons(): Observable<any> {
+    return this.http.get<any>(this.pokemonsUrl)
       .pipe(
-        catchError(this.handleError<Pokemon[]>('getPokemons',[]))
+        map(data => data.results),
+        catchError(this.handleError<Object>('getPokemons',[]))
       )   
   }
   
