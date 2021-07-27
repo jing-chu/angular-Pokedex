@@ -20,33 +20,54 @@ input:focus {
   outline: #336699 auto 1px;
 }
 
+h2 {
+  text-align: center;
+}
+
 li {
   list-style-type: none;
 }
-.search-result li a {
-  border-bottom: 1px solid gray;
-  border-left: 1px solid gray;
-  border-right: 1px solid gray;
-  display: inline-block;
-  width: 100%;
-  max-width: 600px;
-  padding: .5rem;
-  box-sizing: border-box;
-  text-decoration: none;
-  color: black;
+
+.all-names {
+  padding: 0;
+  margin: auto;
+  max-width: 1000px;
+
+  /* flexbox */
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: flex-start;
+  align-items: flex-start;
 }
 
-.search-result li a:hover {
-  background-color: #435A60;
-  color: white;
-}
-
-ul.search-result {
-  margin-top: 0;
-  padding-left: 0;
-}
 
 a {
+  background-color: #3f525c;
+  border-radius: 2px;
+  padding: 1rem;
+  font-size: 1.2rem;
+  text-decoration: none;
+  display: inline-block;
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  min-width: 70px;
+  margin: .5rem auto;
+  box-sizing: border-box;
+
+  /* flexbox */
+  order: 0;
+  flex: 0 1 auto;
+  align-self: auto;
+}
+
+button, .save-btn a {
   padding: 1rem;
   text-decoration: none;
   margin-top: 10px;
@@ -57,11 +78,13 @@ a {
   border-radius: 4px;
 }
 
-a:hover {
-  color: white;
-  background-color: #42545C;
+@media (min-width: 600px) {
+  a {
+    width: 18%;
+    box-sizing: content-box;
+  }
 }
 
-a.active {
+a:hover {
   background-color: black;
 }
