@@ -33,7 +33,7 @@ export class PokemonSearchComponent implements OnInit {
       window.alert("You need to insert a name of pokemon.")
       return
     }
-    this.pokemonService.searchPokemon(name)
+    this.pokemonService.searchPokemon(name.toLowerCase())
     .subscribe(p => {
       this.searchedPokmon = p
       this.movesNames = this.searchedPokmon.moves.map(o => o.move.name)

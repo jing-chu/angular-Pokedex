@@ -1,21 +1,25 @@
 
-<form (ngSubmit)="onSubmit(name)">
-  <input id="search-box" [(ngModel)]="name" name="name" placeholder="name of pokemon" />
-  <button type="submit" >Search</button> 
+<form >
+  <input id="search-box" [(ngModel)]="name" name="name" placeholder="Search" (keyup.enter)="onSubmit(name)" />
 </form>
 
-<app-pokemon-detail [pokemon]="searchedPokmon" [movesNames]="movesNames" [statsNames]="statsNames"></app-pokemon-detail>
+<div class="paginated-list">
+  <div class="detail-info">
+    <app-pokemon-detail [pokemon]="searchedPokmon" [movesNames]="movesNames" [statsNames]="statsNames"></app-pokemon-detail>
+  </div>
+  
 
-<div>
-  <h2>All Pokemons</h2>
-    <div class="all-names">
-      <a *ngFor="let name of allPokemonsName" (click)="getDetailInfo(name)">{{name}}</a>
-    </div>
-
-
-  <button *ngIf="previous" (click)="getPreviousPage()">Previous</button>
-  <button *ngIf="next" (click)="getNextPage()">Next</button>
+  <div class="name-list"> 
+    <h2>All Pokemons</h2>
+      <div class="all-names">
+        <a *ngFor="let name of allPokemonsName" (click)="getDetailInfo(name)">{{name}}</a>
+      </div>
+    <button *ngIf="previous" (click)="getPreviousPage()">Previous</button>
+    <button *ngIf="next" (click)="getNextPage()">Next</button>
+  </div>
 </div>
+
+
 
 <!---->
 
