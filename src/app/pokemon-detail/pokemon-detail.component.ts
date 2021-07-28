@@ -11,18 +11,20 @@ import { PokemonService } from "../pokemon.service"
   styleUrls: ['./pokemon-detail.component.css']
 })
 export class PokemonDetailComponent implements OnInit {
-  @Input() pokemon?:Pokemon | undefined
+  @Input() pokemon:Pokemon | undefined
+  @Input() movesNames: string[] | undefined
+  @Input() statsNames: string[] | undefined
   ivCaughtSet = this.pokemonService.getIvCaughtSet()
   wishlistSet = this.pokemonService.getWishlistSet()
   name = ""
-
+ 
   constructor(
     private pokemonService: PokemonService,
     private router: Router,
   ) { }
 
-  ngOnInit(): void {
-    
+  ngOnInit(): void {  
+   
   }
 
   saveIvCaught() {

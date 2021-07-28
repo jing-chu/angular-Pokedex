@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router'
 
 
-import { Pokemon, PokemonPage, Page } from "../pokemon";
+import { Pokemon } from "../pokemon";
 import { PokemonService } from "../pokemon.service"
 
 
@@ -19,6 +19,8 @@ export class PokemonSearchComponent implements OnInit {
   name = ""
   next = ""
   previous = ""
+  movesNames: string[] = []
+  statsNames: string[] = []
  
 
   constructor(
@@ -32,13 +34,21 @@ export class PokemonSearchComponent implements OnInit {
       return
     }
     this.pokemonService.searchPokemon(name)
-    .subscribe(p => {this.searchedPokmon = p})
-   
+    .subscribe(p => {
+      this.searchedPokmon = p
+      this.movesNames = this.searchedPokmon.moves.map(o => o.move.name)
+      this.statsNames = this.searchedPokmon.stats.map(o => o.stat.name)
+    })
+    this.name = ""
   }
 
   getDetailInfo(name: string) {
     this.pokemonService.searchPokemon(name)
-    .subscribe(p => {this.searchedPokmon = p})
+    .subscribe(p => {
+      this.searchedPokmon = p
+      this.movesNames = this.searchedPokmon.moves.map(o => o.move.name)
+      this.statsNames = this.searchedPokmon.stats.map(o => o.stat.name)
+    })
   }
 
   getNextPage() {

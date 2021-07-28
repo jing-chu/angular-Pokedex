@@ -10,7 +10,7 @@ input {
   padding: .5rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
-  width: 100%;
+  width: 50%;
   max-width: 600px;
   box-sizing: border-box;
   display: block;
@@ -50,15 +50,15 @@ li {
 a {
   background-color: #3f525c;
   border-radius: 2px;
-  padding: 1rem;
+  padding: 0.3rem;
   font-size: 1.2rem;
   text-decoration: none;
   display: inline-block;
   color: #fff;
   text-align: center;
   width: 100%;
-  min-width: 70px;
-  margin: .5rem auto;
+  min-width: 50px;
+  margin: .3rem auto;
   box-sizing: border-box;
 
   /* flexbox */

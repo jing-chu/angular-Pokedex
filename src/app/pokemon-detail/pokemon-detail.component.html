@@ -1,6 +1,18 @@
 <div *ngIf="pokemon">
   <h3><span>Name: </span>{{pokemon.name | titlecase}}</h3>
-  <h3><span>Id: </span>{{pokemon.id}}</h3> 
+  <h3><span>Id: </span>{{pokemon.id}}</h3>
+  <h3 *ngIf="movesNames">
+    <span>Moves: ({{movesNames.length}})</span>
+    <ul>
+      <li *ngFor="let movesName of movesNames">{{movesName}}</li>
+    </ul>
+  </h3>
+  <h3 *ngIf="statsNames">
+    <span>Stats: ({{statsNames.length}})</span>
+    <ul>
+      <li *ngFor="let statsName of statsNames">{{statsName}}</li>
+    </ul>
+  </h3>
 </div>
 
 <div class="save-btn" *ngIf="pokemon">

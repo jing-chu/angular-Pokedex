@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http'
 import { catchError, map, tap } from 'rxjs/operators'
 
 
-import { Pokemon, PokemonPage, Page } from './pokemon'
+import { Pokemon, Page } from './pokemon'
 
 
 @Injectable({
@@ -26,7 +26,7 @@ export class PokemonService {
   getPagesData(url:string= this.pokemonsUrl):Observable<Page> {
     return this.http.get<Page>(url)
       .pipe(
-        tap(x=> console.log(x)),
+        //tap(x=> console.log(x)),
         catchError(this.handleError<Page>('getPagesData'))
       )   
   }
