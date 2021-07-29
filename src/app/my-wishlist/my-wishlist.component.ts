@@ -24,6 +24,10 @@ export class MyWishlistComponent implements OnInit {
 
   }
  
+  delete(pokemon: Pokemon) {
+    this.PokemonService.deleteWishlistItem(pokemon)
+  }
+
 
   goBack(): void {
     this.location.back()

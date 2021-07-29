@@ -3,6 +3,8 @@
 <ul class="pokemons">
   <li *ngFor="let pokemon of pokemons">
     <span class="badge">{{pokemon.id}}</span> {{pokemon.name | titlecase}}
+    <button class="delete" title="delete pokemon"
+    (click)="delete(pokemon)">x</button>
   </li>
 </ul>
 

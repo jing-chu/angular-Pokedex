@@ -45,6 +45,11 @@ export class PokemonService {
     this.ivCaughtSet.add(pokemon.name)
   }
 
+  deleteIvCaughtItem(pokemon: Pokemon) {
+    this.ivCaughtItems.splice(this.ivCaughtItems.indexOf(pokemon), 1)
+    this.ivCaughtSet.delete(pokemon.name)
+  }
+
   getIvCaughtItems() {
     return this.ivCaughtItems
   }
@@ -56,6 +61,11 @@ export class PokemonService {
   addToWishlistItems(pokemon: Pokemon) {
     this.wishlistItems.push(pokemon)
     this.wishlistSet.add(pokemon.name)
+  }
+
+  deleteWishlistItem(pokemon: Pokemon) {
+    this.wishlistItems.splice(this.wishlistItems.indexOf(pokemon), 1)
+    this.wishlistSet.delete(pokemon.name)
   }
 
   getWishlistItems() {

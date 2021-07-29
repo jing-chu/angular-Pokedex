@@ -9,3 +9,30 @@
   border-radius: 4px;
   border: 2px solid black;
 }
+
+.all-names {
+  background-color: #e8e8e8;
+ 
+  /* flexbox */
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: flex-start;
+  align-items: flex-start;
+}
+
+li {
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  padding: 5px;
+  /* flexbox */
+  order: 0;
+  flex: 0 1 auto;
+  align-self: auto;
+}

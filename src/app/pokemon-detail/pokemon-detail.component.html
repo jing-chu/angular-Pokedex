@@ -3,14 +3,14 @@
   <h3><span>Id: </span>{{pokemon.id}}</h3>
   <div *ngIf="movesNames">
     <h3><span>Moves: ({{movesNames.length}})</span></h3>
-    <ul>
-      <p><li *ngFor="let movesName of movesNames">{{movesName}}</li></p>
+    <ul class="all-names">
+      <li *ngFor="let movesName of movesNames"><p>{{movesName}}</p></li>
     </ul>
   </div>
   <div *ngIf="statsNames">
     <h3><span>Stats: ({{statsNames.length}})</span></h3>
-    <ul>
-      <p><li *ngFor="let statsName of statsNames">{{statsName}}</li></p>
+    <ul class="all-names">
+      <li *ngFor="let statsName of statsNames"><p>{{statsName}}</p></li>
     </ul>
   </div>
 </div>

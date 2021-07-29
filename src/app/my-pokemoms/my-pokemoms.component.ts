@@ -21,23 +21,13 @@ export class MyPokemomsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    //this.getPokemon()
+
   }
 
-  //NOT: this.heroes = this.heroService.getHeroes();
-  /**
-   * getPokemon(): void {
-    const name = this.route.snapshot.paramMap.get('name')
-    console.log("NAME QUERYPARAMS", name)
-    console.log("ARRAY", this.pokemons)
-    if (name) {
-      this.PokemonService.searchPokemon(name)
-    .subscribe(pokemon => this.pokemons.push(pokemon))   //Observable.subscribe(): asynchronous approach
-    }
+  delete(pokemon: Pokemon) {
+    this.PokemonService.deleteIvCaughtItem(pokemon)
   }
-   * 
-   */
-  
+
 
   goBack(): void {
     this.location.back()
