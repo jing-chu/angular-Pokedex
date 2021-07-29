@@ -4,13 +4,13 @@
   <div *ngIf="movesNames">
     <h3><span>Moves: ({{movesNames.length}})</span></h3>
     <ul class="all-names">
-      <li *ngFor="let movesName of movesNames"><p>{{movesName}}</p></li>
+      <li *ngFor="let movesName of movesNames"><p>{{movesName}} | </p></li>
     </ul>
   </div>
   <div *ngIf="statsNames">
     <h3><span>Stats: ({{statsNames.length}})</span></h3>
     <ul class="all-names">
-      <li *ngFor="let statsName of statsNames"><p>{{statsName}}</p></li>
+      <li *ngFor="let statsName of statsNames"><p>{{statsName}} | </p></li>
     </ul>
   </div>
 </div>
