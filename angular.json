@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-Pokedex",
+            "outputPath": "dist/angular-pokedex",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -68,10 +68,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "angular-Pokedex:build:production"
+              "browserTarget": "angular-pokedex:build:production"
             },
             "development": {
-              "browserTarget": "angular-Pokedex:build:development"
+              "browserTarget": "angular-pokedex:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +79,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-Pokedex:build"
+            "browserTarget": "angular-pokedex:build"
           }
         },
         "test": {
