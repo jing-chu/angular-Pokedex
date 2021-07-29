@@ -4,6 +4,11 @@
 </form>
 
 <div class="container">
+
+  <div class="detail-info">
+    <app-pokemon-detail [pokemon]="searchedPokmon" [movesNames]="movesNames" [statsNames]="statsNames">
+    </app-pokemon-detail>
+  </div>
  
   <div class="paginated-list"> 
     <h2>All Pokemons</h2>
@@ -14,9 +19,6 @@
     <button *ngIf="next" (click)="getNextPage()">Next</button>
   </div>
 
-  <div class="detail-info">
-    <app-pokemon-detail [pokemon]="searchedPokmon" [movesNames]="movesNames" [statsNames]="statsNames"></app-pokemon-detail>
-  </div>
 
 </div>
 

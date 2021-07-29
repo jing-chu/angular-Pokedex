@@ -3,7 +3,7 @@
 }
 
 input {
-  padding: .5rem;
+  padding: 0.5rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
   width: 50%;
@@ -16,11 +16,10 @@ input:focus {
   outline: #336699 auto 1px;
 }
 
-
 /*paginated-list*/
 h2 {
   text-align: center;
-  color: #3f525c
+  color: #3f525c;
 }
 
 .all-names {
@@ -52,7 +51,7 @@ a {
   text-align: center;
   width: 100%;
   min-width: 50px;
-  margin: .3rem auto;
+  margin: 0.3rem auto;
   box-sizing: border-box;
 
   /* flexbox */
@@ -76,7 +75,7 @@ button {
 
 button:hover {
   color: white;
-  background-color: #42545C;
+  background-color: #42545c;
 }
 
 @media (min-width: 600px) {
@@ -86,22 +85,20 @@ button:hover {
   }
 
   .container {
-    display:flex;
-    flex-direction: row;
-    justify-content: space-around
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
   }
 
   .detail-info {
-    width: 65%
+    width: 65%;
   }
 
   .paginated-list {
-    width: 30%
+    width: 30%;
   }
 }
 
 a:hover {
   background-color: black;
 }
-
-
