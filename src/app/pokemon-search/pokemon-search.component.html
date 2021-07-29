@@ -3,13 +3,9 @@
   <input id="search-box" [(ngModel)]="name" name="name" placeholder="Search" (keyup.enter)="onSubmit(name)" />
 </form>
 
-<div class="paginated-list">
-  <div class="detail-info">
-    <app-pokemon-detail [pokemon]="searchedPokmon" [movesNames]="movesNames" [statsNames]="statsNames"></app-pokemon-detail>
-  </div>
-  
-
-  <div class="name-list"> 
+<div class="container">
+ 
+  <div class="paginated-list"> 
     <h2>All Pokemons</h2>
       <div class="all-names">
         <a *ngFor="let name of allPokemonsName" (click)="getDetailInfo(name)">{{name}}</a>
@@ -17,6 +13,11 @@
     <button *ngIf="previous" (click)="getPreviousPage()">Previous</button>
     <button *ngIf="next" (click)="getNextPage()">Next</button>
   </div>
+
+  <div class="detail-info">
+    <app-pokemon-detail [pokemon]="searchedPokmon" [movesNames]="movesNames" [statsNames]="statsNames"></app-pokemon-detail>
+  </div>
+
 </div>
 
 
