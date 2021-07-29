@@ -16,6 +16,6 @@
 </div>
 
 <div class="save-btn" *ngIf="pokemon">
-  <a [routerLink]="['/mypokemons', {name:name}]" (click)="saveIvCaught()">Pokemon I've caught</a>
-  <a [routerLink]="['/mywishlist', {name:name}]"   (click)="saveWishlist()">Pokemon Wishlist</a>
+  <a [routerLink]="['/mypokemons', {name:name}]" (click)="saveIvCaught()">Add to My Pokemon</a>
+  <a [routerLink]="['/mywishlist', {name:name}]"   (click)="saveWishlist()">Add to My Wishlist</a>
 </div>
